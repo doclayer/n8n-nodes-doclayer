@@ -1,0 +1,22 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="docGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="30" cy="30" r="28" fill="url(#docGradient)"/>
+  <!-- Document icon -->
+  <path d="M20 14h12l8 8v24a2 2 0 0 1-2 2H20a2 2 0 0 1-2-2V16a2 2 0 0 1 2-2z" fill="white" fill-opacity="0.95"/>
+  <!-- Fold corner -->
+  <path d="M32 14v8h8" fill="none" stroke="url(#docGradient)" stroke-width="1.5"/>
+  <!-- Document lines -->
+  <line x1="22" y1="28" x2="36" y2="28" stroke="url(#docGradient)" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="22" y1="33" x2="36" y2="33" stroke="url(#docGradient)" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="22" y1="38" x2="30" y2="38" stroke="url(#docGradient)" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- AI sparkle -->
+  <circle cx="42" cy="42" r="8" fill="#fbbf24"/>
+  <path d="M42 37v10M37 42h10M39 39l6 6M39 45l6-6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+
