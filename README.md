@@ -1,9 +1,8 @@
 # n8n-nodes-doclayer
 
 [![npm version](https://badge.fury.io/js/n8n-nodes-doclayer.svg)](https://badge.fury.io/js/n8n-nodes-doclayer)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is an n8n community node for [Doclayer](https://doclayer.ai) - an AI-powered document processing, extraction, and search platform.
+This is an n8n community node for [Doclayer](https://doclayer.ai) — Headless Document AI Platform with 110+ agent templates.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
@@ -18,6 +17,7 @@ This is an n8n community node for [Doclayer](https://doclayer.ai) - an AI-powere
 - 💰 **Billing & Usage** - Track costs, usage breakdown, and estimates
 - 🧠 **Model Configuration** - Manage LLM and embedding models
 - 📊 **Status Monitoring** - Monitor job status and grounding coverage
+- 🔔 **Webhook Triggers** - Real-time notifications for document events
 
 ## Installation
 
@@ -137,6 +137,19 @@ npm install n8n-nodes-doclayer
 | **Inspect Job** | Get detailed job information |
 | **Get Grounding Report** | Get extraction grounding coverage |
 
+## Trigger Events (Webhooks)
+
+The **Doclayer Trigger** node allows you to start workflows based on real-time events:
+
+| Event | Description |
+|-------|-------------|
+| **Document Completed** | Fires when document processing completes |
+| **Document Failed** | Fires when document processing fails |
+| **Extraction Ready** | Fires when AI extraction is completed |
+| **Job Status Changed** | Fires when an ingestion job status changes |
+| **Workflow Completed** | Fires when a processing workflow completes |
+| **Usage Threshold Reached** | Fires when billing hits a threshold |
+
 ## Example Workflows
 
 ### Upload and Extract Data
@@ -187,6 +200,23 @@ npm install n8n-nodes-doclayer
 4. Return Success/Failure
 ```
 
+### Real-time Processing with Triggers
+
+```
+1. Doclayer Trigger (Document Completed) →
+2. Doclayer (Get Extractions) →
+3. Google Sheets (Add Row) →
+4. Slack (Send Message)
+```
+
+### Error Handling
+
+```
+1. Doclayer Trigger (Document Failed) →
+2. Slack (Send Alert) →
+3. Doclayer (Retry Job)
+```
+
 ## Agent Templates
 
 Doclayer provides pre-built agent templates for common use cases:
@@ -197,6 +227,28 @@ Doclayer provides pre-built agent templates for common use cases:
 - And many more...
 
 Use the `Agent Template ID` field when uploading documents to automatically apply extraction agents.
+
+## Workflow Templates
+
+This repository includes ready-to-use n8n workflow templates in the `templates/` directory:
+
+| Template | Description |
+|---------|-------------|
+| `01-invoice-to-google-sheets.json` | Extract invoice data and add to spreadsheet |
+| `02-contract-to-slack.json` | Analyze contracts and notify team |
+| `03-document-to-webhook.json` | Process documents and send to callback URL |
+| `04-realtime-to-airtable.json` | Real-time processing with Doclayer triggers |
+| `05-error-handling-retry.json` | Automatic error handling and retry |
+
+### Using Templates
+
+1. Go to **Workflows** → **Import from File** in n8n
+2. Select a template JSON file from the `templates/` directory
+3. Configure your Doclayer credentials
+4. Update any integration-specific settings (Google Sheets, Slack, etc.)
+5. Save and activate the workflow
+
+See the [templates README](templates/README.md) for detailed setup instructions for each template.
 
 ## Development
 
@@ -230,5 +282,7 @@ pnpm link --global
 
 ## License
 
-[MIT](LICENSE)
+This connector is provided under the MIT license. See [LICENSE](LICENSE) for details.
+
+Note: The Doclayer platform and services are governed by separate license terms.
 

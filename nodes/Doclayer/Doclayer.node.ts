@@ -17,7 +17,7 @@ export class Doclayer implements INodeType {
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'AI-powered document processing, extraction, and search',
+		description: 'Headless Document AI Platform with 40+ agent templates',
 		defaults: {
 			name: 'Doclayer',
 		},

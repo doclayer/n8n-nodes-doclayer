@@ -1,7 +1,7 @@
 {
   "name": "n8n-nodes-doclayer",
-  "version": "0.1.0",
-  "description": "n8n community node for Doclayer - AI-powered document processing, extraction, and search",
+  "version": "0.2.0",
+  "description": "n8n community node for Doclayer — Headless Document AI Platform",
   "keywords": [
     "n8n-community-node-package",
     "n8n",
@@ -11,13 +11,14 @@
     "ocr",
     "ai",
     "pdf",
-    "vector-search"
+    "vector-search",
+    "webhooks"
   ],
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://doclayer.ai",
   "author": {
     "name": "Doclayer",
-    "email": "support@doclayer.ai"
+    "email": "info@doclayer.ai"
   },
   "repository": {
     "type": "git",
@@ -47,7 +48,8 @@
       "dist/credentials/DoclayerApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/Doclayer/Doclayer.node.js"
+      "dist/nodes/Doclayer/Doclayer.node.js",
+      "dist/nodes/Doclayer/DoclayerTrigger.node.js"
     ]
   },
   "devDependencies": {
